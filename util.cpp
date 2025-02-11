@@ -15,16 +15,29 @@ std::string convToLower(std::string src)
     to a set of words based on the criteria given in the assignment **/
 std::set<std::string> parseStringToWords(string rawWords)
 {
+    // convert raw words to lower case
+    // construct words from raw words, stopping at spaces or punctuation
+    // if the word has 2 or more characters, add it to our set
+    // loop through all of raw words
 
+    rawWords = convToLower(trim(rawWords));
+    set<string> words;
+    string word = "";
 
+    for (int i=0; i<rawWords.length(); i++) {
+        char currChar = rawWords[i];
+        if (currChar == ' ' || currChar == '.' || currChar == '\'' ||
+            currChar == '!' || currChar == '?' || currChar == ';') {
+            if (word.length() >= 2) {
+                words.insert(word);
+            }
+            word = "";
+        } else {
+            word += currChar;
+        }
+    }
 
-
-
-
-
-
-
-
+    return words;
 }
 
 /**************************************************
