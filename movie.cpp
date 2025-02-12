@@ -18,7 +18,7 @@ Movie::~Movie() {}
 
 set<string> Movie::keywords() const {
     set<string> keywordSet = parseStringToWords(name_);
-    keywordSet.insert(genre_);
+    keywordSet.insert(convToLower(genre_));
     return keywordSet;
 }
 
