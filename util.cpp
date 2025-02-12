@@ -24,7 +24,7 @@ std::set<std::string> parseStringToWords(string rawWords)
     set<string> words;
     string word = "";
 
-    for (int i=0; i<rawWords.length(); i++) {
+    for (size_t i=0; i<rawWords.length(); i++) {
         char currChar = rawWords[i];
         if (currChar == ' ' || currChar == '.' || currChar == '\'' ||
             currChar == '!' || currChar == '?' || currChar == ';') {

@@ -1,0 +1,1 @@
+Compile with makefile and run as normal
