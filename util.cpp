@@ -19,7 +19,6 @@ std::set<std::string> parseStringToWords(string rawWords)
     // construct words from raw words, stopping at spaces or punctuation
     // if the word has 2 or more characters, add it to our set
     // loop through all of raw words
-
     rawWords = convToLower(trim(rawWords));
     set<string> words;
     string word = "";
@@ -35,6 +34,11 @@ std::set<std::string> parseStringToWords(string rawWords)
         } else {
             word += currChar;
         }
+    }
+    
+    // add the last word if valid
+    if (word.length() >= 2) {
+        words.insert(word);
     }
 
     return words;
