@@ -38,7 +38,7 @@ vector<Product*> MyDataStore::search(vector<string>& terms, int type) {
     bool firstTerm = true;
 
     for (string term : terms) {
-        map<string, set<Product*>>::iterator it = keyword_to_products_.find(term);
+        map<string, set<Product*>>::iterator it = keyword_to_products_.find(convToLower(term));
         if (it != keyword_to_products_.end()) {
             set<Product*> productSet = it->second;
             if (firstTerm) {
